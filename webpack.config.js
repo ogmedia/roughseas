@@ -14,6 +14,7 @@ module.exports = {
   	new CopyWebpackPlugin({
   		patterns: [
 				{ "from": "src/textures", "to": "textures" },
+        { "from": "src/models", "to": "models" }
 			]
   	}),
   	// new BundleAnalyzerPlugin(),

@@ -56,6 +56,16 @@ import {
     WaterMaterial,
 } from "@babylonjs/materials";
 
+import {
+    AssetContainer,
+} from "@babylonjs/core/assetContainer";
+import {
+    SceneLoader,
+} from "@babylonjs/core/Loading/sceneLoader";
+import {
+    OBJFileLoader,
+} from "@babylonjs/loaders/OBJ/objFileLoader";
+
 import "@babylonjs/loaders/OBJ"
 
 const setupXRSession = (_scene) => {
@@ -88,6 +98,9 @@ const createScene = () => {
     var engine = new Engine(canvas, true); // Generate the BABYLON 3D engine
 
     var scene = new Scene(engine);
+
+    // const container = new AssetContainer(scene);
+
     scene.fogMode = Scene.FOGMODE_EXP;
     scene.fogDensity = 0.0003;
     scene.fogColor = new Color3(0.8,.8,.8);
@@ -167,9 +180,19 @@ const createScene = () => {
     box.material = boxMaterial;
     box.position.x = 0;
     box.checkCollisions = true;
-    // var player = BoxBuilder.CreateBox("player", { height: 50, width: 15, depth: 15}, scene);
-    // camera.lockedTarget = box;
 
+    SceneLoader.ImportMeshAsync(["raft"], "/models/floss.obj")
+        .then((meshes) => { 
+           // do something with the scene
+           console.log("loaded meshes", meshes);
+        });
+
+    // SceneLoader.loadAsync(scene, "floss.obj", "models/")
+    //     .then((done) => {
+    //         console.log("OBJFILEDone", done);
+    //     })
+
+    // OBJFilelLoader.importMeshAsync(["raft"], scene, )
     // Add skybox and ground to the reflection and refraction
     water.addToRenderList(skybox);
     water.addToRenderList(ground);
