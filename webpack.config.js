@@ -16,17 +16,6 @@ module.exports = {
 				{ "from": "src/textures", "to": "textures" },
 			]
   	}),
-  	new BundleAnalyzerPlugin(),
-  ],
-  // module: {
-  // 	rules: [
-  // 		{
-  // 			test: /\.(png|jpe?g|gif)$/i,
-  // 			loader: 'file-loader',
-		// 		options: {
-  //         name: '/textures/[name].[ext]',
-	 //      },
-  // 		}
-  // 	],
-  // },
+  	// new BundleAnalyzerPlugin(),
+  ]
 };
