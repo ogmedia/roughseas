@@ -65,6 +65,9 @@ import {
 import {
     OBJFileLoader,
 } from "@babylonjs/loaders/OBJ/objFileLoader";
+import {
+    AssetsManager,
+} from "@babylonjs/core"
 
 import "@babylonjs/loaders/OBJ"
 
@@ -94,12 +97,8 @@ const checkXRSupport = () => {
 
 const createScene = () => {
     var canvas = document.getElementById("renderCanvas"); // Get the canvas element
-
     var engine = new Engine(canvas, true); // Generate the BABYLON 3D engine
-
     var scene = new Scene(engine);
-
-    // const container = new AssetContainer(scene);
 
     scene.fogMode = Scene.FOGMODE_EXP;
     scene.fogDensity = 0.0003;
@@ -117,6 +116,7 @@ const createScene = () => {
 
     // camera.heightOffset = 50;
     let xrH = null;
+
     setupXRSession(scene)
         .then(xrHelper => {
             if (xrHelper.baseExperience) {
@@ -127,6 +127,8 @@ const createScene = () => {
                         xrH.camera.position.x = 0;
                         xrH.camera.position.y = 45;
                         xrH.camera.position.z = 0;
+                        xrH.camera.ellipsoid = new Vector3(10,30,10);
+                        xrH.camera.applyGravity = true;
                     }
                 });
             }
@@ -135,10 +137,11 @@ const createScene = () => {
     // Light
     var light = new HemisphericLight("light1", new Vector3(0, 1, 0), scene);
     light.intensity = .45;
-    var water = new WaterMaterial("water", scene);
-    water.bumpTexture = new Texture("textures/waterbump.png", scene);
 
+    //water
+    var water = new WaterMaterial("water", scene);
     // Water properties
+    water.bumpTexture = new Texture("textures/waterbump.png", scene);
     water.windForce = -10;
     water.waveHeight = 1.2;
     water.bumpHeight = .3;
@@ -173,41 +176,36 @@ const createScene = () => {
     // Assign the water material
     waterMesh.material = water;
 
-    var box = BoxBuilder.CreateBox("box1", { height: 60, width: 160, depth: 160 }, scene);
-    var boxMaterial = new StandardMaterial("boxMaterial", scene);
-    boxMaterial.diffuseTexture = new Texture("textures/wood.jpg", scene);
-    boxMaterial.diffuseTexture.uScale = boxMaterial.diffuseTexture.vScale = 3;
-    box.material = boxMaterial;
-    box.position.x = 0;
-    box.checkCollisions = true;
-
-    SceneLoader.ImportMeshAsync(["raft"], "/models/floss.obj")
-        .then((meshes) => { 
+    // load the raft
+    let raftMeshes = [];
+    SceneLoader.ImportMeshAsync("", "models/floss.obj", "", scene)
+        .then(({ meshes }) => { 
            // do something with the scene
            console.log("loaded meshes", meshes);
+           meshes.forEach(m => {
+               m.position.y = 20;
+               m.scaling = new Vector3(25, 25, 25);
+               m.checkCollisions = true;
+               raftMeshes.push(m);
+               water.addToRenderList(m);
+           });
         });
 
-    // SceneLoader.loadAsync(scene, "floss.obj", "models/")
-    //     .then((done) => {
-    //         console.log("OBJFILEDone", done);
-    //     })
-
-    // OBJFilelLoader.importMeshAsync(["raft"], scene, )
-    // Add skybox and ground to the reflection and refraction
     water.addToRenderList(skybox);
     water.addToRenderList(ground);
-    // water.addToRenderList(sphere);
-    water.addToRenderList(box);
-
 
     let i = 0;
     scene.registerBeforeRender(function() {
         let time = water._lastTime / 100000;
 
-        let boxX = box.position.x;
-        let boxZ = box.position.z;
-
-        box.position.y = Math.abs((Math.sin(((boxX / 0.05) + time * water.waveSpeed)) * water.waveHeight * water.windDirection.x * 5.0) + (Math.cos(((boxZ / 0.05) +  time * water.waveSpeed)) * water.waveHeight * water.windDirection.y * 5.0));
+        if (raftMeshes.length > 0) {
+            let boxX = raftMeshes[0].position.x;
+            let boxZ = raftMeshes[0].position.z;
+            let yChange = Math.abs((Math.sin(((boxX / 0.05) + time * water.waveSpeed)) * water.waveHeight * water.windDirection.x * 5.0) + (Math.cos(((boxZ / 0.05) +  time * water.waveSpeed)) * water.waveHeight * water.windDirection.y * 5.0));
+            raftMeshes.forEach(rm => {
+                rm.position.y = yChange - 20;
+            });
+        }
     });
 
     engine.runRenderLoop(function() {
