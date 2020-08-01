@@ -66,3 +66,5 @@ public/main.js
 
 # dotenv environment variables file
 .env
+
+*.zip
