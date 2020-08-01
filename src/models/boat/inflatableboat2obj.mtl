@@ -1,0 +1,240 @@
+# 3ds Max Wavefront OBJ Exporter v0.94b - (c)2007 guruware
+# File Created: 04.05.2010 10:53:00
+
+newmtl 01___Default
+	Ns 15.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.8745 0.8745 0.8745
+	Ks 0.2700 0.2700 0.2700
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 01___Default2
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.8941 0.9412 0.9961
+	Ks 0.3150 0.3150 0.3150
+	Ke 0.0000 0.0000 0.0000
+	map_bump F:\watercraft\SEAWINGS catamaran\leatherbump.jpg
+	bump F:\watercraft\SEAWINGS catamaran\leatherbump.jpg
+
+newmtl glass
+	Ns 55.0000
+	Ni 1.5000
+	d 0.2000
+	Tr 0.2000
+	Tf 0.2000 0.2000 0.2000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0667 0.1843 0.2275
+	Ks 0.8550 0.8550 0.8550
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 03___Default
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.2549 0.2549 0.2549
+	Ks 0.6300 0.6300 0.6300
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 20___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka F:\watercraft\inflatableboat2\inflatableboat2\speed.jpg
+	map_Kd F:\watercraft\inflatableboat2\inflatableboat2\speed.jpg
+
+newmtl 15___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka F:\watercraft\inflatableboat2\inflatableboat2\clock.jpg
+	map_Kd F:\watercraft\inflatableboat2\inflatableboat2\clock.jpg
+
+newmtl 14___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka F:\watercraft\inflatableboat2\inflatableboat2\compass1.jpg
+	map_Kd F:\watercraft\inflatableboat2\inflatableboat2\compass1.jpg
+
+newmtl 19___Default
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5880 0.5880 0.5880
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka F:\watercraft\inflatableboat2\inflatableboat2\Speedometer.jpg
+	map_Kd F:\watercraft\inflatableboat2\inflatableboat2\Speedometer.jpg
+
+newmtl 07___Default
+	Ns 30.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0314 0.0314 0.0314
+	Ks 0.4050 0.4050 0.4050
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 02___Default
+	Ns 15.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0510 0.0510 0.0510
+	Ks 0.3150 0.3150 0.3150
+	Ke 0.0000 0.0000 0.0000
+
+newmtl MERCURY
+	Ns 15.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.0510 0.0510 0.0510
+	Ks 0.3150 0.3150 0.3150
+	Ke 0.0000 0.0000 0.0000
+	map_Ka F:\watercraft\inflatableboat2\inflatableboat2\MERCURY DIF1.jpg
+	map_Kd F:\watercraft\inflatableboat2\inflatableboat2\MERCURY DIF1.jpg
+
+newmtl GREY
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.1059 0.1059 0.1059
+	Ks 0.2700 0.2700 0.2700
+	Ke 0.0000 0.0000 0.0000
+
+newmtl RED
+	Ns 25.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.4510 0.1059 0.1059
+	Ks 0.4950 0.4950 0.4950
+	Ke 0.0000 0.0000 0.0000
+
+newmtl GREY2
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.1647 0.1647 0.1647
+	Ks 0.3600 0.3600 0.3600
+	Ke 0.0000 0.0000 0.0000
+
+newmtl inox
+	Ns 29.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.3961 0.3961 0.3961
+	Ks 0.6750 0.6750 0.6750
+	Ke 0.0000 0.0000 0.0000
+
+newmtl wire_135110008
+	Ns 32
+	d 1
+	Tr 1
+	Tf 1 1 1
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.5294 0.4314 0.0314
+	Ks 0.3500 0.3500 0.3500
+
+newmtl 02
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.2941 0.2941 0.2941
+	Ks 0.3150 0.3150 0.3150
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 03
+	Ns 35.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.1137 0.1137 0.1137
+	Ks 0.3600 0.3600 0.3600
+	Ke 0.0000 0.0000 0.0000
+
+newmtl 05__Default
+	Ns 20.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 1.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 0.2118 0.2118 0.2118
+	Ks 0.4050 0.4050 0.4050
+	Ke 0.0000 0.0000 0.0000
