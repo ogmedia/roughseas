@@ -192,7 +192,7 @@ const createScene = () => {
         });
 
     SceneLoader.ImportMeshAsync("", "models/shark/Basking_shark.obj", "", scene)
-        .then(({ meshes }) => { 
+        .then(({ meshes, particles, skeletons }) => { 
            // do something with the scene
            console.log("loaded shark meshes", meshes);
            meshes.forEach(m => {
@@ -206,19 +206,26 @@ const createScene = () => {
            });
         });
 
-    SceneLoader.ImportMeshAsync("", "models/sea_bream/Sean_bream.obj", "", scene)
-        .then(({ meshes }) => { 
+    SceneLoader.ImportMeshAsync("", "models/sea_bream/Sea_Bream.obj", "", scene)
+        .then(({ meshes, particles, skeletons }) => { 
            // do something with the scene
            console.log("loaded sea_bream meshes", meshes);
-           meshes.forEach(m => {
-               m.position.y = 100;
+           console.log("sea_bream skeletons", skeletons);
+           const m = meshes[1];
+               m.position.y = 50;
                m.position.x = 30;
                m.position.z = -10;
-               m.scaling = new Vector3(5, 5, 5);
+               m.scaling = new Vector3(10, 10, 10);
                m.checkCollisions = true;
-               // raftMeshes.push(m);
-               // water.addToRenderList(m);
-           });
+           // meshes.forEach(m => {
+           //     m.position.y = 50;
+           //     m.position.x = 30;
+           //     m.position.z = -10;
+           //     m.scaling = new Vector3(10, 10, 10);
+           //     m.checkCollisions = true;
+           //     // raftMeshes.push(m);
+           //     // water.addToRenderList(m);
+           // });
         });
 
     water.addToRenderList(skybox);
